@@ -51,6 +51,54 @@ This tutorial shows how to handle account lockouts and password resets in active
   <img width="975" height="709" alt="image" src="https://github.com/user-attachments/assets/2597ca95-4137-42c0-8d1f-b137228ae301" />
 
   
+<h2>Test Lockout Policy</h2>
+
+- On <b>Client-1</b>, attempt to log into the same user account with a wrong password <b>six times</b>.
+- You should observe that the account is now <b>locked</b>. This confirms that the Group Policy setting has taken effect.
+- Back on <b>DC-1</b>, open <b>Active Directory Users and Computers (ADUC)</b> to view the account status and confirm that it is locked.
+
+  <img width="975" height="268" alt="image" src="https://github.com/user-attachments/assets/9258418e-1364-45e3-b435-35ba9207934f" />
+
+  <img width="630" height="822" alt="image" src="https://github.com/user-attachments/assets/fcc96237-4f5d-470b-8c0e-0899cc93232b" />
+
+
+  <h2>Unlock and Reset the User Account</h2>
+
+- From <b>DC-1</b>, unlock the account in <b>ADUC</b>.
+- Reset the user’s password to a new one of your choice.
+- Attempt to log back into <b>Client-1</b> with the updated credentials to confirm the account is functioning normally again.
+
+  <img width="616" height="431" alt="image" src="https://github.com/user-attachments/assets/08c800fc-ef4e-4963-bb58-8fd22343bf34" />
+
+  <img width="839" height="286" alt="image" src="https://github.com/user-attachments/assets/838719bb-c61b-4598-93ba-f7bbf52d2f2c" />
+
+
+
+  <h2></h2> Enable and Disable Accounts</h2>
+
+- Using the same test account, disable it in <b>ADUC</b> on <b>DC-1</b>.
+- Attempt to log in from <b>Client-1</b> and observe the error message indicating the account has been disabled.
+- Re-enable the account in <b>ADUC</b>, then try logging in again to confirm access is restored.
+
+  Error message when logging in with disabled account.
+
+  <img width="975" height="240" alt="image" src="https://github.com/user-attachments/assets/2b937a9c-8f9f-4add-989b-eb16f1c2ec09" />
+
+   Re-enabled account working after login.
+
+  <img width="864" height="311" alt="image" src="https://github.com/user-attachments/assets/e4fce23b-a370-46dd-ae59-bd60597d87c5" />
+
+
+<h2></h2> Observe Security Logs</h2>
+
+- Examine the security logs on both <b>DC-1</b> and <b>Client-1</b>.
+- Look for entries that correspond to:
+  - Failed login attempts
+  - Account lockouts
+  - Password resets
+  - Account enabling/disabling
+
+<img width="975" height="421" alt="image" src="https://github.com/user-attachments/assets/17f7d8c1-2221-4afa-bfc1-3a3888edf3db" />
 
 
 
@@ -70,26 +118,9 @@ This tutorial shows how to handle account lockouts and password resets in active
 
 
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+
+
+
+
